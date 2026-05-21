@@ -1,0 +1,45 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model User {
+  id          Int         @id @default(autoincrement())
+  name        String
+  email       String      @unique
+  password    String
+  role        String      @default("siswa")
+  applicants  Applicant[]
+
+  createdAt   DateTime    @default(now())
+}
+
+model Applicant {
+  id            Int       @id @default(autoincrement())
+  userId        Int
+  nisn          String
+  asalSekolah   String
+  alamat        String
+  jurusan       String
+  status        String    @default("pending")
+
+  user          User      @relation(fields: [userId], references: [id])
+
+  documents     Document[]
+
+  createdAt     DateTime  @default(now())
+}
+
+model Document {
+  id            Int       @id @default(autoincrement())
+  applicantId   Int
+  fileName      String
+  fileType      String
+
+  applicant     Applicant @relation(fields: [applicantId], references: [id])
+
+  createdAt     DateTime  @default(now())
+}
