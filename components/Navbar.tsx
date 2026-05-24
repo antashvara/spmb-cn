@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+  import Link from "next/link";
 import Image from "next/image";
 
 export default function Navbar() {
@@ -160,7 +160,8 @@ export default function Navbar() {
           </Link>
 
           {/* Register */}
-          <button
+          <Link
+            href="/register"
             className="
               relative
               overflow-hidden
@@ -177,6 +178,9 @@ export default function Navbar() {
               hover:-translate-y-1
               transition-all
               duration-300
+              inline-flex
+              items-center
+              justify-center
             "
           >
 
@@ -195,7 +199,7 @@ export default function Navbar() {
             <span className="relative z-10">
               Daftar Sekarang
             </span>
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Button */}
