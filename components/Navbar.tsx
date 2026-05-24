@@ -134,7 +134,8 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-3 shrink-0">
 
           {/* Login */}
-          <button
+          <Link
+            href="/login"
             className="
               px-6
               py-3
@@ -150,10 +151,13 @@ export default function Navbar() {
               hover:-translate-y-1
               transition-all
               duration-300
+              inline-flex
+              items-center
+              justify-center
             "
           >
             Login
-          </button>
+          </Link>
 
           {/* Register */}
           <button
