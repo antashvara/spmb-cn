@@ -293,7 +293,8 @@ export default function Footer() {
                 sekolah modern berbasis teknologi.
               </p>
 
-              <button
+              <Link
+              href="/register"
                 className="
                   w-full
                   py-4
@@ -311,7 +312,7 @@ export default function Footer() {
                 "
               >
                 Daftar Sekarang →
-              </button>
+              </Link>
             </div>
           </div>
         </div>
